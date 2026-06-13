@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>John Dockter — Enterprise Data Strategy & AI Implementation</title>
+  <title>John Dockter | Enterprise Data Strategy & AI Implementation</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -658,8 +658,10 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 1.25rem 2rem; }
-      #hero { grid-template-columns: 1fr; padding: 7rem 2rem 4rem; }
-      .hero-terminal { display: none; }
+      #hero { grid-template-columns: 1fr; padding: 7rem 2rem 4rem; gap: 3rem; }
+      .hero-terminal { margin-top: 1rem; }
+      .terminal-window { max-width: 100%; }
+      .terminal-body { font-size: 0.75rem; padding: 1.25rem; }
       section { padding: 5rem 2rem; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .projects-grid { grid-template-columns: 1fr; }
@@ -696,7 +698,7 @@
         <span class="name-highlight">John Dockter.</span>
       </h1>
       <p class="hero-sub">
-        I work at the crossroads of data strategy and AI implementation. My job is figuring out how enterprise organizations can actually get value out of their data, and helping teams turn that into real, working systems.
+        I work at the crossroads of data strategy and AI implementation. I help enterprise organizations get real value from their data, and help teams turn that into working systems.
       </p>
       <div class="hero-cta">
         <a href="#work" class="btn btn-primary">See My Work</a>
@@ -720,7 +722,7 @@
           <div>&nbsp;&nbsp;<span class="t-key">"focus"</span>: <span class="t-val">"Enterprise Ops + AI"</span>,</div>
           <div>&nbsp;&nbsp;<span class="t-key">"stack"</span>: [</div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"Salesforce"</span>, <span class="t-val">"Snowflake"</span>,</div>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"Tableau"</span>, <span class="t-val">"Claude AI"</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"ServiceNow"</span>, <span class="t-val">"Power BI"</span></div>
           <div>&nbsp;&nbsp;],</div>
           <div>&nbsp;&nbsp;<span class="t-key">"superpower"</span>: <span class="t-val">"Translates between</span></div>
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">humans & systems"</span></div>
@@ -737,16 +739,16 @@
       <div class="about-grid">
         <div class="about-text reveal">
           <p>
-            Honestly? My job is to make complex things make sense. Whether that's helping a business team understand what's actually possible with their data, or helping an engineering team understand what a business actually needs — I'm usually the person in the middle making sure everyone's speaking the same language.
+            My job is to make complex things make sense. I help a business team understand what's possible with their data, and I help an engineering team understand what the business needs. I'm the person in the middle keeping everyone on the same page.
           </p>
           <p>
-            I've spent my career in technical operations, working on everything from field workforce management to building the data foundations that let organizations think about AI seriously. Not "AI" as a buzzword, but actual, useful, agentic capabilities that make people's work better.
+            I've spent my career in technical operations, from field workforce management to the data foundations that let organizations take AI seriously. Not "AI" as a buzzword, but agentic capabilities that make people's work better.
           </p>
           <p>
-            Right now I'm deep in the work of figuring out how fiber infrastructure companies can use their operational data more intelligently. How technicians close out jobs, how managers spot patterns they'd never see manually.
+            Right now I'm focused on how fiber infrastructure companies can use their operational data more intelligently: how technicians close out jobs, how managers spot patterns they'd miss by hand.
           </p>
           <p>
-            Outside of work I'm a dad, a casual golfer, and someone who builds side projects just to see what's possible. This website is one of them, built collaboratively with Claude AI as a way to learn and to have something to show beyond a resume bullet point.
+            Outside of work I'm a dad, a casual golfer, and someone who builds side projects to see what's possible. This website is one of them, built as a way to learn and to show something beyond a resume bullet point.
           </p>
         </div>
         <div class="about-stats reveal reveal-delay-2">
@@ -755,16 +757,16 @@
             <div class="stat-label">Years in Tech Ops</div>
           </div>
           <div class="stat-box">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Core Platforms</div>
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Engineers Coordinated</div>
           </div>
           <div class="stat-box">
-            <div class="stat-number">∞</div>
-            <div class="stat-label">Stakeholder Gaps Bridged</div>
+            <div class="stat-number">4</div>
+            <div class="stat-label">BSS/OSS Modules Owned</div>
           </div>
           <div class="stat-box">
-            <div class="stat-number">AI</div>
-            <div class="stat-label">Built With Claude</div>
+            <div class="stat-number">~12</div>
+            <div class="stat-label">Hours/Week Automated</div>
           </div>
         </div>
       </div>
@@ -782,7 +784,7 @@
           <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
           <h3>Agentic Field Operations Assistant</h3>
           <p>
-            Researched and developed a strategy for an AI-powered assistant for field technicians, designed to provide real-time guidance on job code selection during installs and service calls. The same system would surface behavioral insights from closeout notes to help managers spot trends they'd otherwise miss entirely. Currently working through the data foundation requirements before moving to implementation.
+            Researched and developed a strategy for an AI-powered assistant for field technicians, designed to provide real-time guidance on job code selection during installs and service calls. The same system would surface behavioral insights from closeout notes to help managers spot trends they'd miss by hand. Currently working through the data foundation requirements before moving to implementation.
           </p>
           <div class="project-footer">
             <span class="project-tech">Salesforce · Snowflake · LLM Pipeline</span>
@@ -793,10 +795,10 @@
           <span class="project-tag">Data Strategy</span>
           <h3>Bronze–Silver–Gold Data Maturity Framework</h3>
           <p>
-            Designed a tiered data strategy for a regional fiber infrastructure provider and presented it to the CTIO and Director, giving leadership a shared language for where the organization actually sits versus where it needs to be. The framework moves from clean, reliable source data (bronze) to integrated analytics (silver) to AI-ready, agentic pipelines (gold), and sets the sequencing for what gets built next.
+            Designed a tiered data strategy for a regional fiber infrastructure provider and presented it to the CTIO and Director, giving leadership a shared language for where the organization sits versus where it needs to be. The framework moves from clean, reliable source data (bronze) to integrated analytics (silver) to AI-ready, agentic pipelines (gold), and sets the sequencing for what gets built next.
           </p>
           <div class="project-footer">
-            <span class="project-tech">Data Architecture · Tableau · Snowflake</span>
+            <span class="project-tech">Data Architecture · Power BI · Snowflake</span>
           </div>
         </div>
 
@@ -804,7 +806,7 @@
           <span class="project-tag">Automation</span>
           <h3>Operational Workflow Automation</h3>
           <p>
-            Cut roughly 12 hours of manual work per week by automating an address validation and approval pipeline — routing requests from a shared inbox into a tracked SharePoint workflow with automated status and approval alerts, across about 50 requests weekly. Built a second pipeline that feeds competitive market news into a Power BI dashboard, giving business leaders a weekly view that informs market expansion decisions.
+            Cut roughly 12 hours of manual work per week by automating an address validation and approval pipeline. Requests route from a shared inbox into a tracked SharePoint workflow with automated status and approval alerts, across about 50 requests weekly. Built a second pipeline that feeds competitive market news into a Power BI dashboard, giving business leaders a weekly view that informs market expansion decisions.
           </p>
           <div class="project-footer">
             <span class="project-tech">SharePoint · Power BI · Process Automation</span>
@@ -826,7 +828,7 @@
           <span class="project-tag">AI Tools</span>
           <h3>This Website</h3>
           <p>
-            Built this site collaboratively with Claude AI, using it as both a learning exercise and a real artifact to point to. The whole thing was a back-and-forth: I provided context and direction, Claude helped with design and code, and I shaped it into something that actually felt like me.
+            Built this site collaboratively with Claude AI, using it as both a learning exercise and a real artifact to point to. The whole thing was a back-and-forth: I provided context and direction, Claude helped with design and code, and I shaped it into something that felt like me.
           </p>
           <div class="project-footer">
             <span class="project-tech">HTML · CSS · Claude AI · Anthropic API</span>
@@ -837,7 +839,7 @@
           <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
           <h3>AI Readiness Roadmap</h3>
           <p>
-            Working through what it actually takes for an enterprise field operations company to go from "we have data" to "we have AI that does something useful." Covers data quality, tooling, team readiness, and the organizational change that nobody wants to talk about. Currently evaluating Snowflake Intelligence, Cortex Analyst, and the Snowflake semantic layer as core components of the implementation path.
+            Working through what it takes for an enterprise field operations company to go from "we have data" to "we have AI that does something useful." Covers data quality, tooling, team readiness, and the organizational change that nobody wants to talk about. Currently evaluating Snowflake Intelligence, Cortex Analyst, and the Snowflake semantic layer as core components of the implementation path.
           </p>
           <div class="project-footer">
             <span class="project-tech">Strategic Planning · Change Mgmt · AI/ML</span>
@@ -848,7 +850,7 @@
           <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
           <h3>Personal Second Brain</h3>
           <p>
-            Currently building a personal knowledge management system to connect the dots across work projects, learning, and side interests. I've done the research on tooling, architecture, and workflows — now working through the actual build. The goal is to stop losing good thinking to scattered notes and actually compound ideas over time.
+            Currently building a personal knowledge management system to connect the dots across work projects, learning, and side interests. I've done the research on tooling, architecture, and workflows, and now I'm working through the build. The goal is to stop losing good thinking to scattered notes and compound ideas over time.
           </p>
           <div class="project-footer">
             <span class="project-tech">Knowledge Mgmt · AI Tools · Personal Ops</span>
@@ -865,15 +867,15 @@
       <div class="section-label">How I Think</div>
       <div class="approach-grid">
         <div class="approach-text reveal">
-          <h2>Data Maturity Is a Journey, Not a Product</h2>
+          <h2>Organizations Earn Their Way to AI</h2>
           <p>
-            One of the frameworks I keep coming back to is the idea that organizations don't jump straight to AI. They earn it. You have to build the foundation first, or everything you build on top of it wobbles.
+            One framework I keep coming back to: organizations don't jump straight to AI. They earn it. You build the foundation first, or everything on top of it wobbles.
           </p>
           <p>
-            I've used a bronze-silver-gold model to help teams understand where they actually are versus where they want to be. It sounds simple, but it's surprisingly hard to get leadership to admit they're at bronze when everyone assumed they were already at gold.
+            I use a bronze-silver-gold model to help teams see where they stand versus where they want to be. It sounds simple, but getting leadership to admit they're at bronze is hard when everyone assumed they were already at gold.
           </p>
           <p>
-            Once you're honest about that, the path forward gets a lot clearer and a lot more achievable.
+            Once you're honest about that, the path forward gets clearer.
           </p>
         </div>
         <div class="maturity-ladder reveal reveal-delay-2">
@@ -888,7 +890,7 @@
             <div class="step-badge badge-silver">Silver</div>
             <div class="step-content">
               <h4>Integrated Analytics</h4>
-              <p>Connected data across systems. Dashboards that tell a story. Teams that actually use the reports being built for them.</p>
+              <p>Connected data across systems. Dashboards that tell a story. Teams that use the reports being built for them.</p>
             </div>
           </div>
           <div class="maturity-step">
@@ -909,17 +911,17 @@
       <div class="section-label">Tools & Capabilities</div>
       <h2 class="reveal">What I Work With</h2>
       <div class="skills-grid">
-        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">❄️</span><div class="skill-name">Snowflake</div></div>
         <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">☁️</span><div class="skill-name">Salesforce</div></div>
-        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">📊</span><div class="skill-name">Tableau</div></div>
-        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">🤖</span><div class="skill-name">Claude AI</div></div>
-        <div class="skill-chip reveal reveal-delay-3"><span class="skill-icon">🌐</span><div class="skill-name">ServiceNow OSS</div></div>
-        <div class="skill-chip reveal reveal-delay-3"><span class="skill-icon">🏗️</span><div class="skill-name">Data Architecture</div></div>
-        <div class="skill-chip reveal reveal-delay-4"><span class="skill-icon">⚙️</span><div class="skill-name">Process Automation</div></div>
-        <div class="skill-chip reveal reveal-delay-4"><span class="skill-icon">🔄</span><div class="skill-name">Agile / Scrum</div></div>
-        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">🧭</span><div class="skill-name">Strategic Planning</div></div>
-        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">🪟</span><div class="skill-name">Microsoft 365</div></div>
-        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">☁️</span><div class="skill-name">Azure</div></div>
+        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">❄️</span><div class="skill-name">Snowflake</div></div>
+        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">🌐</span><div class="skill-name">ServiceNow OSS</div></div>
+        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">📊</span><div class="skill-name">Power BI</div></div>
+        <div class="skill-chip reveal reveal-delay-3"><span class="skill-icon">🪟</span><div class="skill-name">Microsoft 365</div></div>
+        <div class="skill-chip reveal reveal-delay-3"><span class="skill-icon">☁️</span><div class="skill-name">Azure</div></div>
+        <div class="skill-chip reveal reveal-delay-4"><span class="skill-icon">🤖</span><div class="skill-name">Claude AI</div></div>
+        <div class="skill-chip reveal reveal-delay-4"><span class="skill-icon">🏗️</span><div class="skill-name">Data Architecture</div></div>
+        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">⚙️</span><div class="skill-name">Process Automation</div></div>
+        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">🔄</span><div class="skill-name">Agile / Scrum</div></div>
+        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">🧭</span><div class="skill-name">Strategic Planning</div></div>
       </div>
     </div>
   </section>
@@ -930,7 +932,7 @@
       <div class="section-label" style="justify-content: center;">Contact</div>
       <h2 class="reveal">Let's Talk</h2>
       <p class="reveal reveal-delay-1">
-        If you're working on something at the intersection of data, operations, and AI, or you just want to swap notes, I'm always happy to connect.
+        If you're working on something at the intersection of data, operations, and AI, or you just want to swap notes, reach out.
       </p>
       <div class="contact-links reveal reveal-delay-2">
         <a href="https://www.linkedin.com/in/jdockter" target="_blank" class="btn btn-primary">LinkedIn</a>
