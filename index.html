@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="John Dockter — Enterprise Data Strategy & AI Implementation. Helping organizations turn operational data into intelligent, agentic systems." />
   <title>John Dockter | Enterprise Data Strategy & AI Implementation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="description" content="John Dockter is a data and AI strategy leader in Atlanta, GA. He helps enterprise organizations build the data foundations that make AI useful, from OSS/BSS platforms to agentic capabilities." />
+  <meta property="og:title" content="John Dockter | Enterprise Data Strategy & AI Implementation" />
+  <meta property="og:description" content="Data and AI strategy leader helping enterprise organizations get real value from their data. Atlanta, GA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://johndockter.com" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="John Dockter | Enterprise Data Strategy & AI Implementation" />
+  <meta name="twitter:description" content="Data and AI strategy leader helping enterprise organizations get real value from their data. Atlanta, GA." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230d1117'/%3E%3Ctext x='50' y='68' font-family='Arial, sans-serif' font-size='48' font-weight='800' fill='%2300d4aa' text-anchor='middle'%3EJD%3C/text%3E%3C/svg%3E" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,8 +29,6 @@
       --text-dim: #4a5568;
       --border: rgba(0, 212, 170, 0.15);
       --border-subtle: rgba(255,255,255,0.06);
-      --transition-fast: 0.2s ease;
-      --transition-mid: 0.25s ease;
     }
 
     html { scroll-behavior: smooth; }
@@ -36,67 +40,6 @@
       font-size: 17px;
       line-height: 1.75;
       overflow-x: hidden;
-      scrollbar-width: thin;
-      scrollbar-color: var(--amber-dim) var(--navy-mid);
-    }
-
-    ::selection {
-      background: rgba(0, 212, 170, 0.25);
-      color: var(--text);
-    }
-
-    /* ── SKIP LINK ── */
-    .skip-link {
-      position: fixed;
-      top: -100%;
-      left: 1rem;
-      z-index: 9999;
-      background: var(--amber);
-      color: var(--navy);
-      font-family: 'Syne', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 0 0 4px 4px;
-      transition: top 0.2s;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
-
-    /* ── REDUCED MOTION ── */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      .hero-content > * {
-        opacity: 1 !important;
-        transform: none !important;
-        animation: none !important;
-      }
-      .hero-terminal {
-        opacity: 1 !important;
-        animation: none !important;
-      }
-      .cursor { animation: none !important; opacity: 1; }
-    }
-
-    /* ── FOCUS STYLES ── */
-    :focus-visible {
-      outline: 2px solid var(--amber);
-      outline-offset: 3px;
-      border-radius: 2px;
     }
 
     /* ── NOISE OVERLAY ── */
@@ -119,9 +62,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.25rem 4rem;
-      background: rgba(13, 17, 23, 0.88);
+      background: rgba(13, 17, 23, 0.85);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-subtle);
     }
 
@@ -133,7 +75,6 @@
       color: var(--amber);
       text-transform: uppercase;
       text-decoration: none;
-      touch-action: manipulation;
     }
 
     .nav-links {
@@ -150,93 +91,14 @@
       text-transform: uppercase;
       color: var(--text-muted);
       text-decoration: none;
-      transition: color var(--transition-fast);
-      position: relative;
-      padding-bottom: 2px;
-      touch-action: manipulation;
+      transition: color 0.2s;
     }
 
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--amber);
-      transition: width var(--transition-fast);
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--amber);
-    }
-
-    .nav-links a.active::after,
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* ── HAMBURGER ── */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      border-radius: 4px;
-      touch-action: manipulation;
-    }
-
-    .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--text-muted);
-      transition: all var(--transition-fast);
-      border-radius: 1px;
-    }
-
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 60px;
-      left: 0; right: 0;
-      background: rgba(13, 17, 23, 0.97);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-subtle);
-      z-index: 99;
-      padding: 1.5rem 2rem;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .mobile-nav.open { display: flex; }
-
-    .mobile-nav a {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color var(--transition-fast);
-      touch-action: manipulation;
-    }
-
-    .mobile-nav a:hover { color: var(--amber); }
+    .nav-links a:hover { color: var(--amber); }
 
     /* ── HERO ── */
     #hero {
-      min-height: 100svh;
+      min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
@@ -253,7 +115,6 @@
         linear-gradient(90deg, rgba(0,212,170,0.04) 1px, transparent 1px);
       background-size: 60px 60px;
       mask-image: radial-gradient(ellipse 80% 80% at 70% 50%, black 30%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 70% 50%, black 30%, transparent 100%);
     }
 
     .hero-glow {
@@ -290,7 +151,6 @@
       width: 32px;
       height: 1px;
       background: var(--amber);
-      flex-shrink: 0;
     }
 
     h1 {
@@ -330,13 +190,8 @@
       padding: 0.9rem 2rem;
       text-decoration: none;
       border-radius: 2px;
-      transition: all var(--transition-fast);
+      transition: all 0.2s;
       display: inline-block;
-      cursor: pointer;
-      touch-action: manipulation;
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
     }
 
     .btn-primary {
@@ -360,7 +215,7 @@
       color: var(--amber);
     }
 
-    /* hero right — terminal */
+    /* hero right — animated terminal */
     .hero-terminal {
       position: relative;
       z-index: 1;
@@ -375,7 +230,7 @@
       border-radius: 8px;
       width: 100%;
       max-width: 440px;
-      box-shadow: 0 32px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,212,170,0.08), inset 0 1px 0 rgba(255,255,255,0.04);
+      box-shadow: 0 32px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,212,170,0.08);
       overflow: hidden;
     }
 
@@ -406,7 +261,7 @@
 
     .terminal-body {
       padding: 1.5rem;
-      font-family: ui-monospace, 'Cascadia Code', 'Courier New', monospace;
+      font-family: 'Courier New', monospace;
       font-size: 0.8rem;
       line-height: 2;
     }
@@ -503,11 +358,6 @@
     .stat-box {
       background: var(--navy-card);
       padding: 2rem 1.5rem;
-      transition: background var(--transition-fast);
-    }
-
-    .stat-box:hover {
-      background: rgba(0, 212, 170, 0.05);
     }
 
     .stat-number {
@@ -543,10 +393,9 @@
       border: 1px solid var(--border-subtle);
       border-radius: 6px;
       padding: 2rem;
-      transition: border-color var(--transition-mid), transform var(--transition-mid), box-shadow var(--transition-mid);
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
       position: relative;
       overflow: hidden;
-      will-change: transform;
     }
 
     .project-card::before {
@@ -563,7 +412,7 @@
     .project-card:hover {
       border-color: var(--border);
       transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,212,170,0.06);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
     }
 
     .project-card:hover::before { transform: scaleX(1); }
@@ -648,7 +497,6 @@
       gap: 1.5rem;
       padding: 1.5rem 0;
       border-bottom: 1px solid var(--border-subtle);
-      transition: background var(--transition-fast);
     }
 
     .maturity-step:last-child { border-bottom: none; }
@@ -701,22 +549,18 @@
       border-radius: 4px;
       padding: 1.25rem 1rem;
       text-align: center;
-      transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
-      cursor: default;
+      transition: border-color 0.2s, background 0.2s;
     }
 
     .skill-chip:hover {
       border-color: rgba(0,212,170,0.3);
       background: rgba(0,212,170,0.04);
-      transform: translateY(-2px);
     }
 
     .skill-icon {
-      width: 28px;
-      height: 28px;
-      margin: 0 auto 0.6rem;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
       display: block;
-      color: var(--amber);
     }
 
     .skill-name {
@@ -734,22 +578,13 @@
       text-align: center;
     }
 
-    #contact::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(0,212,170,0.05) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    #contact h2 { margin-bottom: 1rem; position: relative; }
+    #contact h2 { margin-bottom: 1rem; }
 
     #contact p {
       color: var(--text-muted);
       max-width: 520px;
       margin: 0 auto 2.5rem;
       font-size: 1rem;
-      position: relative;
     }
 
     .contact-links {
@@ -757,7 +592,6 @@
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
-      position: relative;
     }
 
     /* ── FOOTER ── */
@@ -790,27 +624,6 @@
     .footer-built span {
       color: var(--amber);
       font-weight: 700;
-    }
-
-    .footer-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .footer-links a {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color var(--transition-fast);
-      touch-action: manipulation;
-    }
-
-    .footer-links a:hover {
-      color: var(--amber);
     }
 
     /* ── SCROLL REVEAL ── */
@@ -854,8 +667,6 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 1.25rem 2rem; }
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
       #hero { grid-template-columns: 1fr; padding: 7rem 2rem 4rem; gap: 3rem; }
       .hero-terminal { margin-top: 1rem; }
       .terminal-window { max-width: 100%; }
@@ -865,397 +676,284 @@
       .projects-grid { grid-template-columns: 1fr; }
       .approach-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: repeat(2, 1fr); }
-      footer { flex-direction: column; gap: 1rem; text-align: center; }
-      .footer-links { justify-content: center; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
   <!-- NAV -->
-  <nav aria-label="Main navigation">
+  <nav>
     <a class="nav-logo" href="#hero">JD</a>
-    <ul class="nav-links" role="list">
+    <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#approach">Approach</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav" onclick="toggleMobileNav(this)">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </nav>
 
-  <!-- MOBILE NAV -->
-  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-    <a href="#about" onclick="closeMobileNav()">About</a>
-    <a href="#work" onclick="closeMobileNav()">Work</a>
-    <a href="#approach" onclick="closeMobileNav()">Approach</a>
-    <a href="#skills" onclick="closeMobileNav()">Skills</a>
-    <a href="#contact" onclick="closeMobileNav()">Contact</a>
-  </nav>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow"></div>
 
-  <main id="main-content">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Atlanta, GA &nbsp;·&nbsp; Data & AI Strategy</div>
+      <h1>
+        Hi, I'm
+        <span class="name-highlight">John Dockter.</span>
+      </h1>
+      <p class="hero-sub">
+        I work at the crossroads of data strategy and AI implementation. I help enterprise organizations get real value from their data, and help teams turn that into working systems.
+      </p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">See My Work</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+    </div>
 
-    <!-- HERO -->
-    <section id="hero" aria-label="Introduction">
-      <div class="hero-bg-grid" aria-hidden="true"></div>
-      <div class="hero-glow" aria-hidden="true"></div>
-
-      <div class="hero-content">
-        <div class="hero-eyebrow">Atlanta, GA &nbsp;·&nbsp; Available for Collaboration</div>
-        <h1>
-          Hi, I'm
-          <span class="name-highlight">John Dockter.</span>
-        </h1>
-        <p class="hero-sub">
-          I work at the crossroads of data strategy and AI implementation. I help enterprise organizations get real value from their data, and help teams turn that into working systems.
-        </p>
-        <div class="hero-cta">
-          <a href="#work" class="btn btn-primary">See My Work</a>
-          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+    <div class="hero-terminal">
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <div class="terminal-dot dot-red"></div>
+          <div class="terminal-dot dot-yellow"></div>
+          <div class="terminal-dot dot-green"></div>
+          <span class="terminal-title">john@portfolio ~ profile.json</span>
+        </div>
+        <div class="terminal-body">
+          <div><span class="t-prompt">$</span> <span class="t-cmd">cat profile.json</span></div>
+          <div>&nbsp;</div>
+          <div>{</div>
+          <div>&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-val">"Data & AI Strategy"</span>,</div>
+          <div>&nbsp;&nbsp;<span class="t-key">"focus"</span>: <span class="t-val">"Enterprise Ops + AI"</span>,</div>
+          <div>&nbsp;&nbsp;<span class="t-key">"stack"</span>: [</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"Salesforce"</span>, <span class="t-val">"Snowflake"</span>,</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"ServiceNow"</span>, <span class="t-val">"Power BI"</span></div>
+          <div>&nbsp;&nbsp;],</div>
+          <div>&nbsp;&nbsp;<span class="t-key">"superpower"</span>: <span class="t-val">"Translates between</span></div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">humans & systems"</span></div>
+          <div>}<span class="cursor"></span></div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="hero-terminal" aria-hidden="true">
-        <div class="terminal-window">
-          <div class="terminal-bar">
-            <div class="terminal-dot dot-red"></div>
-            <div class="terminal-dot dot-yellow"></div>
-            <div class="terminal-dot dot-green"></div>
-            <span class="terminal-title">john@portfolio ~ profile.json</span>
-          </div>
-          <div class="terminal-body">
-            <div><span class="t-prompt">$</span> <span class="t-cmd">cat profile.json</span></div>
-            <div>&nbsp;</div>
-            <div>{</div>
-            <div>&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-val">"Data & AI Strategy"</span>,</div>
-            <div>&nbsp;&nbsp;<span class="t-key">"focus"</span>: <span class="t-val">"Enterprise Ops + AI"</span>,</div>
-            <div>&nbsp;&nbsp;<span class="t-key">"stack"</span>: [</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"Salesforce"</span>, <span class="t-val">"Snowflake"</span>,</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">"ServiceNow"</span>, <span class="t-val">"Power BI"</span></div>
-            <div>&nbsp;&nbsp;],</div>
-            <div>&nbsp;&nbsp;<span class="t-key">"superpower"</span>: <span class="t-val">"Translates between</span></div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-val">humans & systems"</span></div>
-            <div>}<span class="cursor"></span></div>
-          </div>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="section-label">About Me</div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            My job is to make complex things make sense. I help a business team understand what's possible with their data, and I help an engineering team understand what the business needs. I'm the person in the middle keeping everyone on the same page.
+          </p>
+          <p>
+            I've spent my career in technical operations, from field workforce management to the data foundations that let organizations take AI seriously. Not "AI" as a buzzword, but agentic capabilities that make people's work better.
+          </p>
+          <p>
+            Right now I'm focused on how fiber infrastructure companies can use their operational data more intelligently: how technicians close out jobs, how managers spot patterns they'd miss by hand.
+          </p>
+          <p>
+            Outside of work I'm a dad, a casual golfer, and someone who builds side projects to see what's possible. This website is one of them, built as a way to learn and to show something beyond a resume bullet point.
+          </p>
         </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-inner">
-        <div class="section-label">About Me</div>
-        <div class="about-grid">
-          <div class="about-text reveal">
-            <p>
-              My job is to make complex things make sense. I help a business team understand what's possible with their data, and I help an engineering team understand what the business needs. I'm the person in the middle keeping everyone on the same page.
-            </p>
-            <p>
-              I've spent my career in technical operations, from field workforce management to the data foundations that let organizations take AI seriously. Not "AI" as a buzzword, but agentic capabilities that make people's work better.
-            </p>
-            <p>
-              Right now I'm focused on how fiber infrastructure companies can use their operational data more intelligently: how technicians close out jobs, how managers spot patterns they'd miss by hand.
-            </p>
-            <p>
-              Outside of work I'm a dad, a casual golfer, and someone who builds side projects to see what's possible. This website is one of them, built as a way to learn and to show something beyond a resume bullet point.
-            </p>
+        <div class="about-stats reveal reveal-delay-2">
+          <div class="stat-box">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years in Tech Ops</div>
           </div>
-          <div class="about-stats reveal reveal-delay-2" role="list" aria-label="Career highlights">
-            <div class="stat-box" role="listitem">
-              <div class="stat-number">10+</div>
-              <div class="stat-label">Years in Tech Ops</div>
-            </div>
-            <div class="stat-box" role="listitem">
-              <div class="stat-number">100+</div>
-              <div class="stat-label">Engineers Coordinated</div>
-            </div>
-            <div class="stat-box" role="listitem">
-              <div class="stat-number">4</div>
-              <div class="stat-label">BSS/OSS Modules Owned</div>
-            </div>
-            <div class="stat-box" role="listitem">
-              <div class="stat-number">~12</div>
-              <div class="stat-label">Hours/Week Automated</div>
-            </div>
+          <div class="stat-box">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Engineers Coordinated</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">4</div>
+            <div class="stat-label">BSS/OSS Modules Owned</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">~12</div>
+            <div class="stat-label">Hours/Week Automated</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- WORK -->
-    <section id="work">
-      <div class="section-inner">
-        <div class="section-label">Featured Work</div>
-        <h2 class="reveal">Things I've Actually Built</h2>
-        <div class="projects-grid">
+  <!-- WORK -->
+  <section id="work">
+    <div class="section-inner">
+      <div class="section-label">Featured Work</div>
+      <h2 class="reveal">Things I've Actually Built</h2>
+      <div class="projects-grid">
 
-          <div class="project-card reveal reveal-delay-1">
-            <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
-            <h3>Agentic Field Operations Assistant</h3>
-            <p>
-              Researched and developed a strategy for an AI-powered assistant for field technicians, designed to provide real-time guidance on job code selection during installs and service calls. The same system would surface behavioral insights from closeout notes to help managers spot trends they'd miss by hand. Currently working through the data foundation requirements before moving to implementation.
-            </p>
-            <div class="project-footer">
-              <span class="project-tech">Salesforce · Snowflake · LLM Pipeline</span>
-            </div>
+        <div class="project-card reveal reveal-delay-1">
+          <span class="project-tag">Cross-Functional</span>
+          <h3>Greenfield OSS/BSS Platform Delivery</h3>
+          <p>
+            Served as product owner across customer service provisioning, dispatch and scheduling, field operations tooling, and reporting and analytics within a greenfield BSS/OSS build, coordinating 100+ engineers and contributors across development teams to deliver the modules that form the operational foundation the business runs on today. Translated business needs into technical scope and kept order management and provisioning data flowing cleanly between systems like ServiceNow, Salesforce, and Snowflake.
+          </p>
+          <div class="project-footer">
+            <span class="project-tech">ServiceNow · Salesforce · Snowflake · Agile</span>
           </div>
-
-          <div class="project-card reveal reveal-delay-2">
-            <span class="project-tag">Data Strategy</span>
-            <h3>Bronze–Silver–Gold Data Maturity Framework</h3>
-            <p>
-              Designed a tiered data strategy for a regional fiber infrastructure provider and presented it to the CTIO and Director, giving leadership a shared language for where the organization sits versus where it needs to be. The framework moves from clean, reliable source data (bronze) to integrated analytics (silver) to AI-ready, agentic pipelines (gold), and sets the sequencing for what gets built next.
-            </p>
-            <div class="project-footer">
-              <span class="project-tech">Data Architecture · Power BI · Snowflake</span>
-            </div>
-          </div>
-
-          <div class="project-card reveal reveal-delay-3">
-            <span class="project-tag">Automation</span>
-            <h3>Operational Workflow Automation</h3>
-            <p>
-              Cut roughly 12 hours of manual work per week by automating an address validation and approval pipeline. Requests route from a shared inbox into a tracked SharePoint workflow with automated status and approval alerts, across about 50 requests weekly. Built a second pipeline that feeds competitive market news into a Power BI dashboard, giving business leaders a weekly view that informs market expansion decisions.
-            </p>
-            <div class="project-footer">
-              <span class="project-tech">SharePoint · Power BI · Process Automation</span>
-            </div>
-          </div>
-
-          <div class="project-card reveal reveal-delay-1">
-            <span class="project-tag">Cross-Functional</span>
-            <h3>Greenfield OSS/BSS Platform Delivery</h3>
-            <p>
-              Served as product owner across customer service provisioning, dispatch and scheduling, field operations tooling, and reporting and analytics within a greenfield BSS/OSS build, coordinating 100+ engineers and contributors across development teams to deliver the modules that form the operational foundation the business runs on today. Translated business needs into technical scope and kept order management and provisioning data flowing cleanly between systems like ServiceNow, Salesforce, and Snowflake.
-            </p>
-            <div class="project-footer">
-              <span class="project-tech">ServiceNow · Salesforce · Snowflake · Agile</span>
-            </div>
-          </div>
-
-          <div class="project-card reveal reveal-delay-2">
-            <span class="project-tag">AI Tools</span>
-            <h3>This Website</h3>
-            <p>
-              Built this site collaboratively with Claude AI, using it as both a learning exercise and a real artifact to point to. The whole thing was a back-and-forth: I provided context and direction, Claude helped with design and code, and I shaped it into something that felt like me.
-            </p>
-            <div class="project-footer">
-              <span class="project-tech">HTML · CSS · Claude AI · Anthropic API</span>
-            </div>
-          </div>
-
-          <div class="project-card reveal reveal-delay-3">
-            <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
-            <h3>AI Readiness Roadmap</h3>
-            <p>
-              Working through what it takes for an enterprise field operations company to go from "we have data" to "we have AI that does something useful." Covers data quality, tooling, team readiness, and the organizational change that nobody wants to talk about. Currently evaluating Snowflake Intelligence, Cortex Analyst, and the Snowflake semantic layer as core components of the implementation path.
-            </p>
-            <div class="project-footer">
-              <span class="project-tech">Strategic Planning · Change Mgmt · AI/ML</span>
-            </div>
-          </div>
-
-          <div class="project-card reveal reveal-delay-1">
-            <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
-            <h3>Personal Second Brain</h3>
-            <p>
-              Currently building a personal knowledge management system to connect the dots across work projects, learning, and side interests. I've done the research on tooling, architecture, and workflows, and now I'm working through the build. The goal is to stop losing good thinking to scattered notes and compound ideas over time.
-            </p>
-            <div class="project-footer">
-              <span class="project-tech">Knowledge Mgmt · AI Tools · Personal Ops</span>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section>
 
-    <!-- APPROACH -->
-    <section id="approach">
-      <div class="section-inner">
-        <div class="section-label">How I Think</div>
-        <div class="approach-grid">
-          <div class="approach-text reveal">
-            <h2>Organizations Earn Their Way to AI</h2>
-            <p>
-              One framework I keep coming back to: organizations don't jump straight to AI. They earn it. You build the foundation first, or everything on top of it wobbles.
-            </p>
-            <p>
-              I use a bronze-silver-gold model to help teams see where they stand versus where they want to be. It sounds simple, but getting leadership to admit they're at bronze is hard when everyone assumed they were already at gold.
-            </p>
-            <p>
-              Once you're honest about that, the path forward gets clearer.
-            </p>
+        <div class="project-card reveal reveal-delay-2">
+          <span class="project-tag">Automation</span>
+          <h3>Operational Workflow Automation</h3>
+          <p>
+            Cut roughly 12 hours of manual work per week by automating an address validation and approval pipeline. Requests route from a shared inbox into a tracked SharePoint workflow with automated status and approval alerts, across about 50 requests weekly. Built a second pipeline that feeds competitive market news into a Power BI dashboard, giving business leaders a weekly view that informs market expansion decisions.
+          </p>
+          <div class="project-footer">
+            <span class="project-tech">SharePoint · Power BI · Process Automation</span>
           </div>
-          <div class="maturity-ladder reveal reveal-delay-2" role="list" aria-label="Data maturity model">
-            <div class="maturity-step" role="listitem">
-              <div class="step-badge badge-bronze" aria-label="Bronze level">Bronze</div>
-              <div class="step-content">
-                <h4>Data Foundation</h4>
-                <p>Consistent, clean, reliable data at the source. Getting systems to agree on basic facts before anything else.</p>
-              </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+          <span class="project-tag">Data Strategy</span>
+          <h3>Bronze–Silver–Gold Data Maturity Framework</h3>
+          <p>
+            Designed a tiered data strategy for a regional fiber infrastructure provider and presented it to the CTIO and Director, giving leadership a shared language for where the organization sits versus where it needs to be. The framework moves from clean, reliable source data (bronze) to integrated analytics (silver) to AI-ready, agentic pipelines (gold), and sets the sequencing for what gets built next.
+          </p>
+          <div class="project-footer">
+            <span class="project-tech">Data Architecture · Power BI · Snowflake</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <span class="project-tag">AI Tools</span>
+          <h3>This Website</h3>
+          <p>
+            Built this site collaboratively with Claude AI, using it as both a learning exercise and a real artifact to point to. The whole thing was a back-and-forth: I provided context and direction, Claude helped with design and code, and I shaped it into something that felt like me.
+          </p>
+          <div class="project-footer">
+            <span class="project-tech">HTML · CSS · Claude AI · Anthropic API</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
+          <h3>Agentic Field Operations Assistant</h3>
+          <p>
+            Researched and developed a strategy for an AI-powered assistant for field technicians, designed to provide real-time guidance on job code selection during installs and service calls. The same system would surface behavioral insights from closeout notes to help managers spot trends they'd miss by hand. Currently working through the data foundation requirements before moving to implementation.
+          </p>
+          <div class="project-footer">
+            <span class="project-tech">Salesforce · Snowflake · LLM Pipeline</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+          <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
+          <h3>AI Readiness Roadmap</h3>
+          <p>
+            Working through what it takes for an enterprise field operations company to go from "we have data" to "we have AI that does something useful." Covers data quality, tooling, team readiness, and the organizational change that nobody wants to talk about. Currently evaluating Snowflake Intelligence, Cortex Analyst, and the Snowflake semantic layer as core components of the implementation path.
+          </p>
+          <div class="project-footer">
+            <span class="project-tech">Strategic Planning · Change Mgmt · AI/ML</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
+          <h3>Personal Second Brain</h3>
+          <p>
+            Currently building a personal knowledge management system to connect the dots across work projects, learning, and side interests. I've done the research on tooling, architecture, and workflows, and now I'm working through the build. The goal is to stop losing good thinking to scattered notes and compound ideas over time.
+          </p>
+          <div class="project-footer">
+            <span class="project-tech">Knowledge Mgmt · AI Tools · Personal Ops</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="section-inner">
+      <div class="section-label">How I Think</div>
+      <div class="approach-grid">
+        <div class="approach-text reveal">
+          <h2>Organizations Earn Their Way to AI</h2>
+          <p>
+            One framework I keep coming back to: organizations don't jump straight to AI. They earn it. You build the foundation first, or everything on top of it wobbles.
+          </p>
+          <p>
+            I use a bronze-silver-gold model to help teams see where they stand versus where they want to be. It sounds simple, but getting leadership to admit they're at bronze is hard when everyone assumed they were already at gold.
+          </p>
+          <p>
+            Once you're honest about that, the path forward gets clearer.
+          </p>
+        </div>
+        <div class="maturity-ladder reveal reveal-delay-2">
+          <div class="maturity-step">
+            <div class="step-badge badge-bronze">Bronze</div>
+            <div class="step-content">
+              <h4>Data Foundation</h4>
+              <p>Consistent, clean, reliable data at the source. Getting systems to agree on basic facts before anything else.</p>
             </div>
-            <div class="maturity-step" role="listitem">
-              <div class="step-badge badge-silver" aria-label="Silver level">Silver</div>
-              <div class="step-content">
-                <h4>Integrated Analytics</h4>
-                <p>Connected data across systems. Dashboards that tell a story. Teams that use the reports being built for them.</p>
-              </div>
+          </div>
+          <div class="maturity-step">
+            <div class="step-badge badge-silver">Silver</div>
+            <div class="step-content">
+              <h4>Integrated Analytics</h4>
+              <p>Connected data across systems. Dashboards that tell a story. Teams that use the reports being built for them.</p>
             </div>
-            <div class="maturity-step" role="listitem">
-              <div class="step-badge badge-gold" aria-label="Gold level">Gold</div>
-              <div class="step-content">
-                <h4>Agentic Intelligence</h4>
-                <p>AI that acts on data in real time. Predictive signals. Systems that help people do their jobs better without getting in the way.</p>
-              </div>
+          </div>
+          <div class="maturity-step">
+            <div class="step-badge badge-gold">Gold</div>
+            <div class="step-content">
+              <h4>Agentic Intelligence</h4>
+              <p>AI that acts on data in real time. Predictive signals. Systems that help people do their jobs better without getting in the way.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-inner">
-        <div class="section-label">Tools & Capabilities</div>
-        <h2 class="reveal">What I Work With</h2>
-        <div class="skills-grid" role="list">
-
-          <div class="skill-chip reveal reveal-delay-1" role="listitem">
-            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6.5 12a5.5 5.5 0 1 1 4.48 5.4A4 4 0 1 1 9 11.93"/>
-              <path d="M12 12v4m0 0h2m-2 0h-2"/>
-            </svg>
-            <div class="skill-name">Salesforce</div>
-          </div>
-
-          <div class="skill-chip reveal reveal-delay-1" role="listitem">
-            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="12" y1="2" x2="12" y2="22"/>
-              <path d="M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07"/>
-              <path d="M2 12h20"/>
-              <path d="M9 3 12 2l3 1M9 21l3 1 3-1M3 9l-1 3 1 3M21 9l1 3-1 3"/>
-            </svg>
-            <div class="skill-name">Snowflake</div>
-          </div>
-
-          <div class="skill-chip reveal reveal-delay-2" role="listitem">
-            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
-            </svg>
-            <div class="skill-name">ServiceNow OSS</div>
-          </div>
-
-          <div class="skill-chip reveal reveal-delay-2" role="listitem">
-            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="12" width="4" height="9" rx="1"/>
-              <rect x="10" y="7" width="4" height="14" rx="1"/>
-              <rect x="17" y="3" width="4" height="18" rx="1"/>
-            </svg>
-            <div class="skill-name">Power BI</div>
-          </div>
-
-          <div class="skill-chip reveal reveal-delay-3" role="listitem">
-            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="8" height="8" rx="1"/>
-              <rect x="13" y="3" width="8" height="8" rx="1"/>
-              <rect x="3" y="13" width="8" height="8" rx="1"/>
-              <rect x="13" y="13" width="8" height="8" rx="1"/>
-            </svg>
-            <div class="skill-name">Microsoft 365</div>
-          </div>
-
-          <div class="skill-chip reveal reveal-delay-3" role="listitem">
-            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 18h7l2-4 2 4h7"/>
-              <path d="M7 18 12 6l5 12"/>
-              <path d="M9 14h6"/>
-            </svg>
-            <div class="skill-name">Azure</div>
-          </div>
-
-          <div class="skill-chip reveal reveal-delay-4" role="listitem">
-            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 2a10 10 0 1 0 10 10"/>
-              <path d="M12 8v4l3 3"/>
-              <circle cx="19" cy="5" r="3"/>
-            </svg>
-            <div class="skill-name">Claude AI</div>
-          </div>
-
-          <div class="skill-chip reveal reveal-delay-4" role="listitem">
-            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <ellipse cx="12" cy="5" rx="9" ry="3"/>
-              <path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/>
-              <path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/>
-            </svg>
-            <div class="skill-name">Data Architecture</div>
-          </div>
-
-          <div class="skill-chip reveal reveal-delay-1" role="listitem">
-            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-              <circle cx="12" cy="12" r="4"/>
-            </svg>
-            <div class="skill-name">Process Automation</div>
-          </div>
-
-          <div class="skill-chip reveal reveal-delay-1" role="listitem">
-            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="23 4 23 10 17 10"/>
-              <polyline points="1 20 1 14 7 14"/>
-              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
-            </svg>
-            <div class="skill-name">Agile / Scrum</div>
-          </div>
-
-          <div class="skill-chip reveal reveal-delay-2" role="listitem">
-            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <circle cx="12" cy="12" r="6"/>
-              <circle cx="12" cy="12" r="2"/>
-              <line x1="12" y1="2" x2="12" y2="6"/>
-            </svg>
-            <div class="skill-name">Strategic Planning</div>
-          </div>
-
-        </div>
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <div class="section-label">Tools & Capabilities</div>
+      <h2 class="reveal">What I Work With</h2>
+      <div class="skills-grid">
+        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">☁️</span><div class="skill-name">Salesforce</div></div>
+        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">❄️</span><div class="skill-name">Snowflake</div></div>
+        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">🌐</span><div class="skill-name">ServiceNow OSS</div></div>
+        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">📊</span><div class="skill-name">Power BI</div></div>
+        <div class="skill-chip reveal reveal-delay-3"><span class="skill-icon">🪟</span><div class="skill-name">Microsoft 365</div></div>
+        <div class="skill-chip reveal reveal-delay-3"><span class="skill-icon">☁️</span><div class="skill-name">Azure</div></div>
+        <div class="skill-chip reveal reveal-delay-4"><span class="skill-icon">🤖</span><div class="skill-name">Claude AI</div></div>
+        <div class="skill-chip reveal reveal-delay-4"><span class="skill-icon">🏗️</span><div class="skill-name">Data Architecture</div></div>
+        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">⚙️</span><div class="skill-name">Process Automation</div></div>
+        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">🔄</span><div class="skill-name">Agile / Scrum</div></div>
+        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">🧭</span><div class="skill-name">Strategic Planning</div></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-inner">
-        <div class="section-label" style="justify-content: center;">Contact</div>
-        <h2 class="reveal">Let's Talk</h2>
-        <p class="reveal reveal-delay-1">
-          If you're working on something at the intersection of data, operations, and AI, or you just want to swap notes, reach out.
-        </p>
-        <div class="contact-links reveal reveal-delay-2">
-          <a href="https://www.linkedin.com/in/jdockter" target="_blank" rel="noopener noreferrer" class="btn btn-primary">LinkedIn</a>
-          <a href="mailto:JohnDockter@icloud.com" class="btn btn-ghost">Email Me</a>
-        </div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-label" style="justify-content: center;">Contact</div>
+      <h2 class="reveal">Let's Talk</h2>
+      <p class="reveal reveal-delay-1">
+        If you're working on something at the intersection of data, operations, and AI, or you just want to swap notes, reach out.
+      </p>
+      <div class="contact-links reveal reveal-delay-2">
+        <a href="https://www.linkedin.com/in/jdockter" target="_blank" class="btn btn-primary">LinkedIn</a>
+        <a href="mailto:JohnDockter@icloud.com" class="btn btn-ghost">Email Me</a>
       </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
     <p>© 2026 John Dockter</p>
-    <div class="footer-links">
-      <a href="https://www.linkedin.com/in/jdockter" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="mailto:JohnDockter@icloud.com">Email</a>
-    </div>
-    <div class="footer-built">Atlanta, GA &nbsp;·&nbsp; Built with <span>Claude</span></div>
+    <div class="footer-built">Atlanta, GA</div>
   </footer>
 
   <script>
@@ -1270,55 +968,8 @@
       });
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
-
-    // Active nav link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
-          });
-        }
-      });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-
-    sections.forEach(section => navObserver.observe(section));
-
-    // Mobile nav
-    function toggleMobileNav(btn) {
-      const nav = document.getElementById('mobileNav');
-      const isOpen = nav.classList.toggle('open');
-      btn.classList.toggle('open', isOpen);
-      btn.setAttribute('aria-expanded', isOpen);
-      btn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-    }
-
-    function closeMobileNav() {
-      const nav = document.getElementById('mobileNav');
-      const btn = document.querySelector('.nav-hamburger');
-      nav.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      btn.setAttribute('aria-label', 'Open navigation menu');
-    }
-
-    // Close mobile nav on outside click
-    document.addEventListener('click', (e) => {
-      const nav = document.getElementById('mobileNav');
-      const btn = document.querySelector('.nav-hamburger');
-      if (nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
-        closeMobileNav();
-      }
-    });
-
-    // Close mobile nav on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMobileNav();
-    });
   </script>
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d254bfc1b4484fdaaaff901d0fcd420d"}'></script><!-- End Cloudflare Web Analytics -->
 
 </body>
 </html>
