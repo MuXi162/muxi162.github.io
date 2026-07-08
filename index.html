@@ -536,18 +536,31 @@
     /* ── SKILLS ── */
     #skills { background: var(--navy); }
 
+    .skill-group {
+      margin-top: 2.5rem;
+    }
+
+    .skill-group-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+    }
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
-      margin-top: 3rem;
     }
 
     .skill-chip {
       background: var(--navy-card);
       border: 1px solid var(--border-subtle);
       border-radius: 4px;
-      padding: 1.25rem 1rem;
+      padding: 1.1rem 1rem;
       text-align: center;
       transition: border-color 0.2s, background 0.2s;
     }
@@ -801,6 +814,17 @@
         </div>
 
         <div class="project-card reveal reveal-delay-2">
+          <span class="project-tag">Data Engineering</span>
+          <h3>Application Sunset & Data Archival Platform</h3>
+          <p>
+            Preserved the full production instance of a sunsetting application by designing a tiered Snowflake archive: a Raw schema of 44 tables for the source data, a Curated schema of 19 tables for the reports managers rely on day to day, and a Stage schema wired to Azure Blob to hold 90GB of attachments. Built the cross-cloud integration and configured the blob permissions for secure read access, then created a staged view with pre-signed URLs so anyone could search attachments by name, type, or size and open them through time-limited links. Set up dedicated user roles and a separate warehouse to keep access controlled and compute costs in check.
+          </p>
+          <div class="project-footer">
+            <span class="project-tech">Snowflake · Azure Blob · Data Architecture</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
           <span class="project-tag">Automation</span>
           <h3>Operational Workflow Automation</h3>
           <p>
@@ -811,7 +835,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal reveal-delay-3">
+        <div class="project-card reveal reveal-delay-1">
           <span class="project-tag">Data Strategy</span>
           <h3>Bronze–Silver–Gold Data Maturity Framework</h3>
           <p>
@@ -822,7 +846,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal reveal-delay-1">
+        <div class="project-card reveal reveal-delay-2">
           <span class="project-tag">AI Tools</span>
           <h3>This Website</h3>
           <p>
@@ -919,18 +943,52 @@
     <div class="section-inner">
       <div class="section-label">Tools & Capabilities</div>
       <h2 class="reveal">What I Work With</h2>
-      <div class="skills-grid">
-        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">☁️</span><div class="skill-name">Salesforce</div></div>
-        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">❄️</span><div class="skill-name">Snowflake</div></div>
-        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">🌐</span><div class="skill-name">ServiceNow OSS</div></div>
-        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">📊</span><div class="skill-name">Power BI</div></div>
-        <div class="skill-chip reveal reveal-delay-3"><span class="skill-icon">🪟</span><div class="skill-name">Microsoft 365</div></div>
-        <div class="skill-chip reveal reveal-delay-3"><span class="skill-icon">☁️</span><div class="skill-name">Azure</div></div>
-        <div class="skill-chip reveal reveal-delay-4"><span class="skill-icon">🤖</span><div class="skill-name">Claude AI</div></div>
-        <div class="skill-chip reveal reveal-delay-4"><span class="skill-icon">🏗️</span><div class="skill-name">Data Architecture</div></div>
-        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">⚙️</span><div class="skill-name">Process Automation</div></div>
-        <div class="skill-chip reveal reveal-delay-1"><span class="skill-icon">🔄</span><div class="skill-name">Agile / Scrum</div></div>
-        <div class="skill-chip reveal reveal-delay-2"><span class="skill-icon">🧭</span><div class="skill-name">Strategic Planning</div></div>
+
+      <div class="skill-group reveal reveal-delay-1">
+        <div class="skill-group-title">Platforms</div>
+        <div class="skills-grid">
+          <div class="skill-chip"><div class="skill-name">Snowflake</div></div>
+          <div class="skill-chip"><div class="skill-name">Salesforce</div></div>
+          <div class="skill-chip"><div class="skill-name">ServiceNow</div></div>
+          <div class="skill-chip"><div class="skill-name">Power BI</div></div>
+          <div class="skill-chip"><div class="skill-name">Azure</div></div>
+          <div class="skill-chip"><div class="skill-name">Microsoft 365</div></div>
+          <div class="skill-chip"><div class="skill-name">GitHub</div></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal reveal-delay-2">
+        <div class="skill-group-title">AI Toolkit</div>
+        <div class="skills-grid">
+          <div class="skill-chip"><div class="skill-name">Claude</div></div>
+          <div class="skill-chip"><div class="skill-name">Microsoft Copilot</div></div>
+          <div class="skill-chip"><div class="skill-name">ChatGPT</div></div>
+          <div class="skill-chip"><div class="skill-name">Gemini</div></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal reveal-delay-2">
+        <div class="skill-group-title">Languages</div>
+        <div class="skills-grid">
+          <div class="skill-chip"><div class="skill-name">SQL</div></div>
+          <div class="skill-chip"><div class="skill-name">Python</div></div>
+          <div class="skill-chip"><div class="skill-name">HTML / CSS</div></div>
+          <div class="skill-chip"><div class="skill-name">Bash</div></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal reveal-delay-3">
+        <div class="skill-group-title">Disciplines</div>
+        <div class="skills-grid">
+          <div class="skill-chip"><div class="skill-name">Data Architecture</div></div>
+          <div class="skill-chip"><div class="skill-name">Systems Integration</div></div>
+          <div class="skill-chip"><div class="skill-name">Data Migration & ETL</div></div>
+          <div class="skill-chip"><div class="skill-name">Process Automation</div></div>
+          <div class="skill-chip"><div class="skill-name">Business-Technical Translation</div></div>
+          <div class="skill-chip"><div class="skill-name">Vendor Management</div></div>
+          <div class="skill-chip"><div class="skill-name">Agile / Scrum</div></div>
+          <div class="skill-chip"><div class="skill-name">Strategic Planning</div></div>
+        </div>
       </div>
     </div>
   </section>
