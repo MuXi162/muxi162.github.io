@@ -26,7 +26,7 @@
       --amber-glow: rgba(0, 212, 170, 0.12);
       --text: #e8eaf0;
       --text-muted: #8892a4;
-      --text-dim: #4a5568;
+      --text-dim: #6b7688;
       --border: rgba(0, 212, 170, 0.15);
       --border-subtle: rgba(255,255,255,0.06);
     }
@@ -95,6 +95,31 @@
     }
 
     .nav-links a:hover { color: var(--amber); }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 28px;
+      height: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .nav-toggle-bar {
+      width: 100%;
+      height: 2px;
+      background: var(--text);
+      border-radius: 1px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* ── HERO ── */
     #hero {
@@ -690,7 +715,31 @@
       .approach-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: repeat(2, 1fr); }
       footer { flex-direction: column; gap: 0.75rem; text-align: center; }
-      .nav-links { display: none; }
+
+      .nav-toggle { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 1.25rem;
+        background: rgba(13, 17, 23, 0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 1.5rem 2rem 2rem;
+        opacity: 0;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+      }
     }
   </style>
 </head>
@@ -699,13 +748,18 @@
   <!-- NAV -->
   <nav>
     <a class="nav-logo" href="#hero">JD</a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#approach">Approach</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -720,7 +774,7 @@
         <span class="name-highlight">John Dockter.</span>
       </h1>
       <p class="hero-sub">
-        I work at the crossroads of data strategy and AI implementation. I help enterprise organizations get real value from their data, and help teams turn that into working systems.
+        I help enterprise organizations get real value from their data, and help teams turn that into working systems.
       </p>
       <div class="hero-cta">
         <a href="#work" class="btn btn-primary">See My Work</a>
@@ -787,7 +841,7 @@
             <div class="stat-label">BSS/OSS Modules Owned</div>
           </div>
           <div class="stat-box">
-            <div class="stat-number">~18</div>
+            <div class="stat-number">~20</div>
             <div class="stat-label">Hours/Week Automated</div>
           </div>
         </div>
@@ -857,8 +911,19 @@
           </div>
         </div>
 
-        <div class="project-card reveal reveal-delay-2">
-          <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
+        <div class="project-card reveal reveal-delay-3">
+          <span class="project-tag">AI Tools</span>
+          <h3>Personal Second Brain</h3>
+          <p>
+            Built and now running an autonomous knowledge system on top of Obsidian, using Claude Code as the engine that reads, writes, and connects notes across a PARA-structured vault. Added two content agents on top of the base system: one that pulls and summarizes YouTube transcripts, another that researches topics live via web search and scraping, both filing structured, source-linked notes back into the vault automatically. The last piece was a scheduled agent, a Task Scheduler job that runs unattended against a watchlist on its own scoped permissions, researches what's due, and logs every run for review. At its current research cadence, that agent alone is saving an estimated ~2 hours a week versus doing the same searching, reading, and synthesis by hand.
+          </p>
+          <div class="project-footer">
+            <span class="project-tech">Obsidian · Claude Code · Automation</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">Ongoing</span>
           <h3>Agentic Field Operations Assistant</h3>
           <p>
             Researched and developed a strategy for an AI-powered assistant for field technicians, designed to provide real-time guidance on job code selection during installs and service calls. The same system would surface behavioral insights from closeout notes to help managers spot trends they'd miss by hand. Currently working through the data foundation requirements before moving to implementation.
@@ -868,25 +933,14 @@
           </div>
         </div>
 
-        <div class="project-card reveal reveal-delay-3">
-          <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
+        <div class="project-card reveal reveal-delay-2">
+          <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">Ongoing</span>
           <h3>AI Readiness Roadmap</h3>
           <p>
             Working through what it takes for an enterprise field operations company to go from "we have data" to "we have AI that does something useful." Covers data quality, tooling, team readiness, and the organizational change that nobody wants to talk about. Currently evaluating Snowflake Intelligence, Cortex Analyst, and the Snowflake semantic layer as core components of the implementation path.
           </p>
           <div class="project-footer">
             <span class="project-tech">Strategic Planning · Change Mgmt · AI/ML</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal reveal-delay-1">
-          <span class="project-tag" style="background: rgba(100,180,255,0.1); color: #64b4ff; border-color: rgba(100,180,255,0.25);">In Progress</span>
-          <h3>Personal Second Brain</h3>
-          <p>
-            Currently building a personal knowledge management system to connect the dots across work projects, learning, and side interests. I've done the research on tooling, architecture, and workflows, and now I'm working through the build. The goal is to stop losing good thinking to scattered notes and compound ideas over time.
-          </p>
-          <div class="project-footer">
-            <span class="project-tech">Knowledge Mgmt · AI Tools · Personal Ops</span>
           </div>
         </div>
 
@@ -1002,7 +1056,7 @@
         If you're working on something at the intersection of data, operations, and AI, or you just want to swap notes, reach out.
       </p>
       <div class="contact-links reveal reveal-delay-2">
-        <a href="https://www.linkedin.com/in/jdockter" target="_blank" class="btn btn-primary">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/jdockter" target="_blank" rel="noopener noreferrer" class="btn btn-primary">LinkedIn</a>
         <a href="mailto:JohnDockter@icloud.com" class="btn btn-ghost">Email Me</a>
       </div>
     </div>
@@ -1026,6 +1080,29 @@
       });
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900 && navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   </script>
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d254bfc1b4484fdaaaff901d0fcd420d"}'></script><!-- End Cloudflare Web Analytics -->
 
