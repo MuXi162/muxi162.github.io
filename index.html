@@ -489,8 +489,38 @@
       color: var(--text-dim);
     }
 
+    /* ── AGENTS ── */
+    #agents { background: var(--navy-mid); }
+
+    .agents-intro {
+      max-width: 680px;
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .agent-facts { margin-top: 0.25rem; }
+
+    .agent-facts dt {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .agent-facts dd {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
     /* ── APPROACH ── */
-    #approach { background: var(--navy-mid); }
+    #approach { background: var(--navy); }
 
     .approach-grid {
       display: grid;
@@ -559,7 +589,7 @@
     }
 
     /* ── SKILLS ── */
-    #skills { background: var(--navy); }
+    #skills { background: var(--navy-mid); }
 
     .skill-group {
       margin-top: 2.5rem;
@@ -635,7 +665,7 @@
 
     /* ── CONTACT ── */
     #contact {
-      background: var(--navy-mid);
+      background: var(--navy);
       text-align: center;
     }
 
@@ -774,6 +804,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#agents">Agents</a></li>
       <li><a href="#approach">Approach</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -927,7 +958,7 @@
           <span class="project-tag">AI · Personal Project</span>
           <h3>Personal Second Brain</h3>
           <p>
-            I built and run a knowledge system on Obsidian, with Claude Code reading, writing, and linking notes across a PARA vault. Two agents summarize YouTube transcripts and research topics through web search, and file source-linked notes back into the vault. A scheduled agent works a watchlist on its own scoped permissions and logs each run for my review.
+            I built and run a knowledge system on Obsidian, with Claude Code reading, writing, and linking notes across a PARA vault. The agents in the <a href="#agents" style="color: var(--amber);">human-in-the-loop section</a> file their output into it, and I review each run's log.
           </p>
           <div class="project-footer">
             <span class="project-tech">Obsidian · Claude Code · MCP · Automation</span>
@@ -942,6 +973,74 @@
           </p>
           <div class="project-footer">
             <span class="project-tech">Claude Code · Git LFS · PowerShell</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENTS -->
+  <section id="agents">
+    <div class="section-inner">
+      <div class="section-label">Side Projects</div>
+      <h2 class="reveal">Agents With a Human in the Loop</h2>
+      <p class="agents-intro reveal reveal-delay-1">
+        I run a few agents on my own time to learn where they help and where a person still needs to decide. I keep myself in the loop: each agent has a written rule for what it can do alone and what waits for my approval.
+      </p>
+      <div class="projects-grid">
+
+        <div class="project-card reveal reveal-delay-1">
+          <span class="project-tag">Personal Agent</span>
+          <h3>Fantasy Football Manager</h3>
+          <dl class="agent-facts">
+            <dt>What it does</dt>
+            <dd>I play in three fantasy leagues with three scoring systems and about 45 players. Claude reads my rosters, injuries, and matchups, and it recommends moves for each league.</dd>
+            <dt>When it runs</dt>
+            <dd>When I start a session each week. It works through my signed-in browser, so I start it.</dd>
+            <dt>Acts alone on</dt>
+            <dd>Starting lineups. A lineup change reverses until kickoff, and Claude reports each change in one line.</dd>
+            <dt>Waits for me on</dt>
+            <dd>Waiver claims, budget bids, adds, drops, and trades. Those spend budget or cost a player. Claude presents a trade and never sends it, because a trade reaches nine other people.</dd>
+          </dl>
+          <div class="project-footer">
+            <span class="project-tech">Claude Code · MCP · Browser Automation</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <span class="project-tag">Personal Agent</span>
+          <h3>Stock Watchlist Screen</h3>
+          <dl class="agent-facts">
+            <dt>What it does</dt>
+            <dd>A Python screener checks every symbol on my watchlist against trend, momentum, and volume triggers set to match my TradingView charts. It ranks the hits and writes a deep dive with a rule-based trade plan for the top five.</dd>
+            <dt>When it runs</dt>
+            <dd>Weekdays at 4:30 PM ET, after the close.</dd>
+            <dt>Acts alone on</dt>
+            <dd>Pulling market data and writing a dated screen note to my vault.</dd>
+            <dt>Waits for me on</dt>
+            <dd>Every trade. The screen places no orders. I reviewed its first two weeks of hits and tuned the rules, and I still trade its signals on paper.</dd>
+          </dl>
+          <div class="project-footer">
+            <span class="project-tech">Python · TradingView · Obsidian Dataview</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+          <span class="project-tag">Personal Agent</span>
+          <h3>Research and Video Watchlist</h3>
+          <dl class="agent-facts">
+            <dt>What it does</dt>
+            <dd>An agent works a list of YouTube channels and research topics I keep. It summarizes transcripts, searches the web, and files notes with source links into my vault.</dd>
+            <dt>When it runs</dt>
+            <dd>On a schedule. Each topic sets its own pace, weekly or monthly.</dd>
+            <dt>Acts alone on</dt>
+            <dd>Reading sources and writing notes, five items per run at most.</dd>
+            <dt>Waits for me on</dt>
+            <dd>Gaps. A video with no transcript gets logged and skipped, not guessed. When a channel link pointed to the wrong channel, the agent flagged it and waited for me to fix the list.</dd>
+          </dl>
+          <div class="project-footer">
+            <span class="project-tech">Claude Code · Web Search · Obsidian</span>
           </div>
         </div>
 
